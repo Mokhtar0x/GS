@@ -1,0 +1,20 @@
+{
+  "name": "telegram-gmail-bot-termux",
+  "version": "2.2.0",
+  "description": "Telegram reward/task bot with SQLite storage and Termux support",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "termux": "TERMUX_MODE=true node bot.js",
+    "start:termux": "bash start-termux.sh",
+    "setup:termux": "bash setup-termux.sh",
+    "migrate": "node -e \"const Database=require('./database-file'); const db=new Database(); console.log('SQLite ready with', db.driver);\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
